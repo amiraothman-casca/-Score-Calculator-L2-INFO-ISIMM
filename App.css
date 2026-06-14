@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #ffffff;
+  overflow-x: hidden;
+
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0ea5e9);
+}
+
+/* 🔮 background glow effects */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+}
+
+body::before {
+  top: -150px;
+  right: -150px;
+  background: rgba(56, 189, 248, 0.25);
+}
+
+body::after {
+  bottom: -150px;
+  left: -150px;
+  background: rgba(99, 102, 241, 0.25);
+}
+
+/* 📦 container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🏆 title */
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #38bdf8, #a78bfa, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+/* 📌 tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tabs button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.tabs button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.active-tab {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* 🧾 UE card */
+.ue-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  padding: 20px;
+  margin-bottom: 20px;
+
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+}
+
+.ue-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ue-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* 📚 subject card */
+.subject-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 14px;
+  margin-top: 12px;
+  transition: 0.3s ease;
+}
+
+.subject-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.01);
+}
+
+.subject-card h4 {
+  margin-bottom: 12px;
+}
+
+.subject-card span {
+  color: #93c5fd;
+}
+
+/* ✍️ inputs */
+.inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input::placeholder {
+  color: #cbd5e1;
+}
+
+input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
+/* 📊 subject result */
+.subject-result {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.subject-result strong {
+  color: #38bdf8;
+}
+
+/* 🏁 result card */
+.result-card {
+  margin-top: 40px;
+  padding: 30px;
+
+  border-radius: 20px;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.25),
+    rgba(139, 92, 246, 0.25)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.result-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.result-card h3 {
+  color: #fde68a;
+  margin-bottom: 10px;
+}
+
+/* ✅ status */
+.success {
+  color: #22c55e;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.danger {
+  color: #ef4444;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* 🔄 button */
+.reset-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+
+  transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+/* 📱 responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+}
